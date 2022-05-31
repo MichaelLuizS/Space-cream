@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root {
+  --ff-heading: 'Staatliches', cursive;
+  --ff-texting: 'Open Sans', sans-serif;
+
+  --bg-header: #8E9AAF;
+  --bg-title: #CBC0D3;
+  --bg-p: #23053A;
+  --bg-primary: #EFF1FF;
+  --bg-h2: #4A4E69;
+  --bg-span: #FEEAFA;
+    
+  font-size: 62.5%;
+  --fs-body: 1.5rem;
+  --fs-title: 4rem;
+}
+
+body {
+  font-size: var(--fs-body);
+
+  background: #baa5c9;
+}
+
+.page {
+  max-width: 76.8rem;
+  margin: 0 auto;
+}
+
+
+header {
+  background: var(--bg-header);
+
+  text-align: center;
+}
+
+header .visible {
+  visibility: hidden;
+}
+
+header img {
+  margin: 3.2rem auto 0;
+}
+
+header div {
+  background-color: var(--bg-header);
+  margin: 3.2rem auto 0;
+}
+
+header div h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+
+  margin-bottom: 3rem;
+}
+
+header .title {
+  border-bottom: solid 1px #FFFFFF;
+}
+
+main {
+  background: var(--bg-primary);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main p {
+  font-family: var(--ff-texting);
+
+  color: var(--bg-p);
+
+  padding: 1.4rem 8rem 0;
+
+
+}
+
+main .cards {
+  margin-top: 6.4rem;
+
+  display: grid;
+  gap: 3.2rem;
+}
+
+main .card {
+  animation-name: playcard;
+  animation-duration: 700ms;
+}
+
+main .card img {
+  transition: transform 200ms;
+}
+
+main .card img:hover {
+  transform: scale(1.1);
+  filter:saturate(1.5);
+  opacity: 0.9;
+}
+
+
+main .cards .card div {
+  position: relative;
+}
+
+
+
+main .cards .card div h2 {
+  position: absolute;
+
+  left: 19.2rem;
+  top: 1.6rem;
+  
+  font-family: var(--ff-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  color: var(--bg-h2);
+
+}
+
+main .cards .card div span {
+  background: var(--bg-span);
+
+  width: 11.2rem;
+  height: 3.5rem;
+  border-radius: 2rem;
+
+  display: block;
+
+  padding: auto;
+
+  animation-name: playspan;
+  animation-duration: 700ms;
+
+  cursor: pointer;
+
+  transition: transform 200ms;
+
+}
+
+main .cards .card div span:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  background: #f3d7ed ;
+}
+
+
+
+@keyframes playcard {
+  0%{
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes playspan {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}@media (min-width: 830px ){
+  .page {
+    display: flex;
+    max-width: 144rem;
+  }
+
+  .page header {
+    width: 40rem;
+    position: fixed;
+    height: 100vh;
+  }
+
+  .page header .visible {
+    visibility: visible;
+
+    margin: 3rem 2rem 0;
+
+    font-family: var(--ff-texting);
+    color: #FFFFFF;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  main p {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  main .cards {
+
+    margin-left: 30rem;
+  
+  }
+
+}
+
+
+::-webkit-scrollbar {
+  background-color: var(--bg-primary);
+  width: 5px;
+  }
+
+::-webkit-scrollbar-thumb {
+  background-color: #5b5b5b;
+  border-radius: 10px;
+}
